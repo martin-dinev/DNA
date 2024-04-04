@@ -13,8 +13,9 @@ int main(){
         dist[b][a] = min(dist[b][a], c);
     }
     for(int mid = 0 ; mid < n ; mid ++){
-        for(int i = 0 ; i <= mid ; i ++){
-            for(int j = 0 ; j <= mid ; j ++){
+        // mora da odi do n, ne mozhe do mid
+        for(int i = 0 ; i < n ; i ++){
+            for(int j = 0 ; j < n ; j ++){
                 int new_dist = dist[i][mid] + dist[mid][j];
                 if(new_dist < dist[i][j])
                     dist[i][j] = new_dist;
